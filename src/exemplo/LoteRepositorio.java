@@ -1,5 +1,6 @@
 package exemplo;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // São esses repositorios que se comunicam com o banco de dados
@@ -23,14 +24,17 @@ public class LoteRepositorio {
         this.armazem.remove(id);
     }
 
-    public void atualizaLote(Lote p){
-        this.addLote(p);
+    public void atualizaLote(Lote l){
+        this.addLote(l);
     }
 
     public Lote getLote(String id){
         return this.armazem.get(id);
     }
 
+    public List<Lote> getAll(){
+        return List.copyOf(this.armazem.values());
+    }
     public String listaLotes(){
         String lista = "Lotes:\n";
 
